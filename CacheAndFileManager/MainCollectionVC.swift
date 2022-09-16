@@ -22,7 +22,7 @@ class MainCollectionVC: UICollectionViewController {
     override func loadView() {
         super.loadView()
         view = collectionView
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .cyan
     }
     
     override func viewDidLoad() {
