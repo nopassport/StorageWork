@@ -46,12 +46,12 @@ class MainCollectionVC: UICollectionViewController {
         title = "Images from Web"
         let fileManAction = UIAction(title: "FileManager") { [weak self] _ in
             let vc = SaveImagesCollectionVC(vcType: .fileManager, collViewLayout: UICollectionViewFlowLayout())
-            vc.title = "FileManager"
+            vc.title = "image from FileManager"
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         let coreDataAction = UIAction(title: "CoreData") { [weak self] _ in
             let vc = SaveImagesCollectionVC(vcType: .coreData, collViewLayout: UICollectionViewFlowLayout())
-            vc.title = "CoreData"
+            vc.title = "image from CoreData"
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -83,6 +83,7 @@ extension MainCollectionVC {
         let vc = ImageViewController()
         vc.setItem(withAdress: strAdresses[indexPath.row])
         vc.title = "Bmw-\(indexPath.row)"
+        vc.view.backgroundColor = view.backgroundColor
         navigationController?.pushViewController(vc, animated: true)
     }
   
