@@ -25,16 +25,14 @@ class CoreDataManager {
         let newImage = ImageModel(context: persistentContainer.viewContext)
         let data = image.jpegData(compressionQuality: 1)
         newImage.image = data
-        try! persistentContainer.viewContext.save()
+        try? persistentContainer.viewContext.save()
     }
     
-    public func fethData() -> [UIImage?] {
+    public func fethAllImages() -> [UIImage?] {
         var images = [UIImage?]()
         do{
-            (try persistentContainer.viewContext.fetch(ImageModel.fetchRequest()).map { $0.image }).forEach { 
-                if let data = $0 {
-                    images.append(UIImage(data: data))
-                }
+            (try persistentContainer.viewContext.fetch(ImageModel.fetchRequest()).compactMap { $0.image }).forEach {
+                images.append(UIImage(data: $0))
             }
         }catch{
             print(error.localizedDescription)

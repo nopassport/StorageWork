@@ -36,7 +36,7 @@ class ImageViewController: UIViewController {
     }
     
     //MARK: - Metods
-    public func setItem(withAdress adress: String){
+    public func setImageView(withAdress adress: String){
         Networking.shared.getImage(from: adress) { [weak self] image in
             DispatchQueue.main.async { [weak self] in
                 self?.imageView.image = image
@@ -58,7 +58,7 @@ class ImageViewController: UIViewController {
                                            preferredStyle: .alert)
         let fileManagAction = UIAlertAction(title: "fileManager",
                                             style: .default) { [weak self] _ in
-            FileManag.shared.save(image: self?.imageView.image, withName: self?.title)
+            FileManag.shared.save(image: self?.imageView.image, toFolder: .imageFolder, withName: self?.title)
         }
         let coreDataAction = UIAlertAction(title: "CoreData",
                                            style: .default) { [weak self] _ in

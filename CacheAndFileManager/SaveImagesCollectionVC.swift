@@ -33,9 +33,9 @@ class SaveImagesCollectionVC: UICollectionViewController {
     private func fetchData() {
         switch vcType! {
         case .fileManager:
-            savedImages = FileManag.shared.getImages(from: .ImageFolder)
+            savedImages = FileManag.shared.getAllImages(from: .imageFolder)
         case .coreData:
-            savedImages = CoreDataManager.shared.fethData().compactMap{ $0 }
+            savedImages = CoreDataManager.shared.fethAllImages().compactMap{ $0 }
         }
     }
     

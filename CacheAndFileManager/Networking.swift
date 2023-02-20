@@ -9,7 +9,7 @@ import UIKit
 
 class Networking {
     
-    let cache = NSCache<NSString, UIImage>()
+    private let cache = NSCache<NSString, UIImage>()
     static let shared = Networking()
     private init() {}
     
@@ -21,7 +21,8 @@ class Networking {
         }
         guard let url = URL(string: strAdress) else {
             print("something with url")
-            return}
+            return
+        }
         URLSession.shared.dataTask(with: url) { [weak self] data, _, err in
             if let err = err {
                 print(err.localizedDescription)

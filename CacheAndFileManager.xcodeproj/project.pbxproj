@@ -79,10 +79,10 @@
 			children = (
 				4D73B3D228B9EF5000EF4076 /* AppDelegate.swift */,
 				4D73B3D428B9EF5000EF4076 /* SceneDelegate.swift */,
-				4D8B7B7B28BAB60D00264BBC /* ImageCollectionViewCell.swift */,
 				4D73B3D628B9EF5000EF4076 /* MainCollectionVC.swift */,
-				4D8B7B8128BC16C900264BBC /* SaveImagesCollectionVC.swift */,
 				4D8B7B7F28BACE0400264BBC /* ImageViewController.swift */,
+				4D8B7B8128BC16C900264BBC /* SaveImagesCollectionVC.swift */,
+				4D8B7B7B28BAB60D00264BBC /* ImageCollectionViewCell.swift */,
 				4D8B7B7D28BABD1300264BBC /* Networking.swift */,
 				4D45A06428D50CE5008FCCD2 /* Storage */,
 				4D73B3DB28B9EF5100EF4076 /* Assets.xcassets */,
